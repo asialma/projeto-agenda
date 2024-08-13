@@ -3,7 +3,7 @@ package br.ufpb.dcx.ayla.agenda;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Contato implements Serializable {
+public class Contato implements Serializable{
     private String nome;
     private int diaAniversario;
     private int mesAniversario;
