@@ -18,7 +18,9 @@ public class AgendaAyla implements Agenda{
 
     @Override
     public boolean cadastraContato(String nome, int dia, int mes) {
-        return false;
+        Contato contato = new Contato(nome, dia, mes);
+        contatos.put(nome, contato);
+        return true;
     }
 
     @Override
