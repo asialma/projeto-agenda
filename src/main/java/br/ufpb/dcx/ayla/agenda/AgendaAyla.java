@@ -1,36 +1,51 @@
 package br.ufpb.dcx.ayla.agenda;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AgendaAyla implements Agenda{
-    private Map<String, Contato> contatos;
+    private HashMap<String, Contato> contatos;
+    private GravadorDeDados gravador;
 
     public AgendaAyla(Map<String, Contato> contatos) {
         this.contatos = new HashMap<>();
+        this.gravador = new GravadorDeDados();
     }
 
     public AgendaAyla(){
-        this(null);
+        this(new HashMap<>());
     }
 
     @Override
     public boolean cadastraContato(String nome, int dia, int mes) {
         Contato contato = new Contato(nome, dia, mes);
-        contatos.put(nome, contato);
-        return true;
+        if (this.contatos.containsKey(nome)){
+            return false;
+        } else {
+            contatos.put(nome, contato);
+            return true;
+        }
     }
 
     @Override
     public Collection<Contato> pesquisaAniversariantes(int dia, int mes) {
-        return null;
+        Collection<Contato> aniversariantesPesquisados = new ArrayList<>();
+        for (Contato c: contatos.values()){
+            if (c.getDiaAniversario() == dia && c.getMesAniversario() == mes);{
+                aniversariantesPesquisados.add(c);
+            }
+        }
+        return aniversariantesPesquisados;
     }
 
     @Override
     public boolean removeContato(String nome) throws ContatoInexistenteException {
-        return false;
+        if (this.contatos.containsKey(nome)){
+            contatos.remove(nome);
+            return true;
+        }
+        throw new ContatoInexistenteException("Contato inexistente na agenda");
     }
 
     @Override
