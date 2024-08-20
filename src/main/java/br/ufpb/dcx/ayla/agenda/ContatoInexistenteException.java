@@ -6,6 +6,6 @@ public class ContatoInexistenteException extends Exception {
     }
 
     public ContatoInexistenteException(){
-        this("");
+        this("Contato inexistente");
     }
 }
