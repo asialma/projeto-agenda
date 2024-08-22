@@ -1,4 +1,6 @@
-package br.ufpb.dcx.ayla.agenda;
+package br.ufpb.dcx.ayla.agenda.persistencia;
+
+import br.ufpb.dcx.ayla.agenda.Contato;
 
 import java.io.*;
 import java.util.HashMap;
