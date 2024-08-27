@@ -13,7 +13,7 @@ public class AgendaSearchController implements ActionListener {
     private Agenda agenda;
     private JFrame janelaPrincipal;
 
-    public AgendaSearchController(Agenda agenda, JFrame janelaPrincipal){
+    public AgendaSearchController(Agenda agenda, JFrame janelaPrincipal) {
         this.agenda = agenda;
         this.janelaPrincipal = janelaPrincipal;
     }
@@ -24,9 +24,9 @@ public class AgendaSearchController implements ActionListener {
         int mes = Integer.parseInt(JOptionPane.showInputDialog(janelaPrincipal, "Qual o mês em que nasceu? [1-12]"));
         Collection<Contato> aniversariantesPesq = agenda.pesquisaAniversariantes(dia, mes);
 
-        if (aniversariantesPesq.size() > 0){
+        if (aniversariantesPesq.size() > 0) {
             JOptionPane.showMessageDialog(janelaPrincipal, "Aniversariantes encontrados:");
-            for (Contato c: aniversariantesPesq){
+            for (Contato c : aniversariantesPesq) {
                 JOptionPane.showMessageDialog(janelaPrincipal, c.toString());
             }
         } else {

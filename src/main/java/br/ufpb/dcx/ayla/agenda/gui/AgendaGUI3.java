@@ -21,10 +21,10 @@ public class AgendaGUI3 extends JFrame{
         setSize(800, 600);
         setLocation(150, 150);
         setResizable(false);
-        getContentPane().setBackground(Color.white);
+        getContentPane().setBackground(Color.pink);
 
         linha1 = new JLabel("Minha Agenda de Aniversários", JLabel.CENTER);
-        linha1.setForeground(Color.red);
+        linha1.setForeground(Color.white);
         linha1.setFont(new Font("Serif", Font.BOLD, 24));
         linha2 = new JLabel(boloImg, JLabel.CENTER);
 

@@ -35,8 +35,7 @@ public class AgendaAyla implements Agenda {
     public Collection<Contato> pesquisaAniversariantes(int dia, int mes) {
         Collection<Contato> aniversariantesPesquisados = new ArrayList<>();
         for (Contato c : contatos.values()) {
-            if (c.getDiaAniversario() == dia && c.getMesAniversario() == mes) ;
-            {
+            if (c.getDiaAniversario() == dia && c.getMesAniversario() == mes) {
                 aniversariantesPesquisados.add(c);
             }
         }
